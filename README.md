@@ -1,6 +1,6 @@
 # Student-Management-System.
 
-Description: The main objective of this project is to manage students information of an institution. 
+The main objective of this project is to manage students information of an institution.
 This project has a registration page and login page for institute management.
 The main feature of this project is, admin can insert student details, view all student details in table format, admin can update and delete the student details.
 In this project I have used MVT design pattern.
