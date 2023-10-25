@@ -1,0 +1,48 @@
+{% extends 'parent.html' %}
+{% block title %}
+register page
+{% endblock %}
+
+
+{% block navbar%}
+{% endblock %}
+
+
+{% block content %}
+<div class="container p-5" >
+<form method="post">
+    {% csrf_token %}
+    <h2 align='center'> Resgister Page </h2>
+
+    {% if user_available %}
+    <h3 class="dager"> already exists </h3>
+    {% endif %}
+
+
+    <div class="mb-3">
+        <label for="tbusername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="tbusername" name='tbusername' aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+
+
+    <div class="mb-3">
+      <label for="tbemail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="tbemail" name='tbemail' aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="tbpassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="tbpassword" name='tbpassword'>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary form-control">REGISTER</button> </br>
+
+    already register<a href="{% url 'login' %}"> login </a>
+  </form>
+</div>
+
+{% endblock %}

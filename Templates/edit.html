@@ -1,0 +1,54 @@
+{% extends 'parent.html' %}
+
+{% block title %}
+    edit page
+{% endblock %}
+
+
+
+{% block content %} 
+</br>
+    <div class="container">
+        <h2> Edit student  details</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+
+            <div class="mb-3">
+                <label for="tbname" class="form-label">name</label>
+                <input type='text' id="tbname" class='form-control' name='tbname' value="{{ student.name }}">
+              </div>
+
+
+              <div class="mb-4">
+                <label for="ddlcourse" id='ddlcourse' name="ddlcourse" class="form-label">Course</label>
+                <select name="ddlcourse" id="ddlcourse" class="form-select" name='ddlcourse' value="{{ student.name }}">
+                <option selected > {{ student.course }} </option>
+                {% for c in courses %}
+                <option > {{ c.cname }} </option>
+                 {% endfor %}
+              </select>
+            </div>
+
+
+              <div class="mb-3">
+                <label for="tbphno" class="form-label">phno</label>
+                <input type='number' id="tbphno" class='form-control' name='tbphno' value="{{ student.phno }}">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="tbage" class="form-label">age</label>
+                <input type='number' id="tbage" class='form-control' name='tbage' value="{{ student.age }}">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="tbemail" class="form-label">email</label>
+                <input type='text' id='tbemail' class='form-control' name='tbemail' value="{{ student.email }}"> 
+              </div>
+            <input class="btn-success form-control btn-warning" type='submit' value='UPDATE'>
+        </form>
+    </div>
+{% endblock %}

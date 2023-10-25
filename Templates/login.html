@@ -1,0 +1,67 @@
+{% extends 'parent.html' %}
+{% block title %}
+login page
+{% endblock %}
+
+{% load static %}
+<style>
+  label{
+    color:'white'
+  }
+
+  body{
+    background-color:red;
+  }
+</style>
+
+
+
+{% block navbar%}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="container p-5" >
+<form method="post">
+    {% csrf_token %}
+    
+    <h2 align='center'  style="color:white"> Login Page </h2>
+
+    {{ msg }}
+
+    {% if user_available %}
+    <h3 class="dager"> already exists </h3>
+    {% endif %}
+
+
+    <div class="mb-3">
+        <label for="tbusername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="tbusername" name='tbusername' aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+
+
+    <div class="mb-3">
+      <label for="tbpassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="tbpassword" name='tbpassword'/ >
+    </div>
+
+
+    <button type="submit" class="btn btn-primary form-control" style="height:40px; width:100px align:center">login</button> </br>
+
+    <p style="color:white">Not Register </p> <a href="{% url 'register'%}" style="color:orange"> SignUp </a>
+  </form>
+</div>
+
+<style>
+
+    <img src="{% static '3939234.jpg' %}">
+</style>
+
+{% endblock %}

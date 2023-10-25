@@ -1,0 +1,36 @@
+h1{
+    color: red;
+}
+
+label{
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+
+#tbusername, #tbpassword{
+    color:orange;
+    background-color: black;
+    border-color: aqua;
+}
+
+h2{
+    color: white;
+}
+
+#tbname, #tbphno, #ddlcourse, #tbage, #tbemail{
+    color:orange;
+    background-color: black;
+    border-color: green;
+}
+
+.tbhead{
+    color: aqua;
+}
+
+.table{
+    color:white;
+}
+
